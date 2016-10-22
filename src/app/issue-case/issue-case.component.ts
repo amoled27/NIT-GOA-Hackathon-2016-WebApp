@@ -19,7 +19,8 @@ export class IssueCaseComponent implements OnInit {
 		console.log(this.date);
 		console.log(this.adhaarid);
 
-    this.newcaseService.makePost(this.adhaarid);
+
+    this.newcaseService.makePost(/*PASS ADHAR ID STRING HERE, AND PASS THE FULL JSON MODEL);
 
 
 	}

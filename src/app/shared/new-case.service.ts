@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFire, FirebaseListObservable, FirebaseObjectObservable} from "angularfire2";
+import {Case} from "./case";
 
 @Injectable()
 export class NewCaseService {
@@ -9,17 +10,11 @@ export class NewCaseService {
 
   constructor(private af: AngularFire) { }
 
-  makePost(adhardid :string){
+  makePost(adhardid :string, model : Case){
 
     const path = `/aadhar_no/` + adhardid;
-
     this.userid = this.af.database.list(path);
-
-
-    this.userid.first().subscribe(x => console.log(x.uid));
-
-
-    this.userid.first().subscribe(res => this.userid = res.json());
+    this.userid.push(model);
 
 
   }
