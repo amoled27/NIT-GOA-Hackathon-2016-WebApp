@@ -1,22 +1,36 @@
-import { Injectable } from '@angular/core';
-import {AngularFire, FirebaseListObservable, FirebaseObjectObservable} from "angularfire2";
+import {Injectable, Inject} from '@angular/core';
+import {
+  AngularFire, FirebaseListObservable, FirebaseObjectObservable, AngularFireDatabase,
+  FirebaseRef
+} from "angularfire2";
 import {Case} from "./case";
+import {Subject} from "rxjs";
 
 @Injectable()
 export class NewCaseService {
-
+  sdkDb: any;
+  path: string;
 
   private userid: FirebaseListObservable<any>;
 
-  constructor(private af: AngularFire) { }
+  constructor(private af: AngularFire, private db: AngularFireDatabase, @Inject(FirebaseRef) fb,) {
 
-  makePost(adhardid :string, model : Case){
-
-
-    const path = `/case/` + adhardid;
-    this.userid = this.af.database.list(path);
-    this.userid.push(model);
+    this.sdkDb = fb.database().ref();
 
   }
+
+
+  makePost(adhardid: string, model: Case) {
+
+
+    this.path = `case/` + adhardid;
+    console.log(adhardid)
+
+    this.userid = this.af.database.list(this.path);
+    this.userid.push(model);
+
+
+  }
+
 
 }

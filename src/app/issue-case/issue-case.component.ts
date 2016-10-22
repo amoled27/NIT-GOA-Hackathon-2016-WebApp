@@ -9,7 +9,9 @@ import {Case} from "../shared/case";
 	styleUrls: ['./issue-case.component.css']
 })
 export class IssueCaseComponent implements OnInit {
-	public myForm :FormGroup;
+  AADHAR_ID : string;
+
+  public myForm :FormGroup;
 	adhaarid:string;
 	date:string;
 	constructor(private newcaseService : NewCaseService, private _formBuilder: FormBuilder) { }
@@ -83,8 +85,11 @@ export class IssueCaseComponent implements OnInit {
     console.log(model);
 
     console.log(val.adhaarid);
+    this.AADHAR_ID = val.adhaarid;
 
-    this.newcaseService.makePost(val.aadharid, model)
+
+
+    this.newcaseService.makePost(this.AADHAR_ID, model)
 
   }
 
