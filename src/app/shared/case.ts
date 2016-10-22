@@ -3,7 +3,7 @@ export interface Case {
 
   aadharid: string; // required with minimum 5 chracters
   date: string; // required with minimum 5 chracters
-
+  status: boolean; //true - open false closed
 
   //Add multiple prescriexaminations
 
