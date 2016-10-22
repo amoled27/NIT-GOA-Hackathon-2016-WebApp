@@ -18,6 +18,7 @@ import  {routerConfig} from "./router.config";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { IssueCaseComponent } from './issue-case/issue-case.component';
 
 
 
@@ -57,7 +58,8 @@ export const myFirebaseAuthConfig = {
     RegisterComponent,
     DashboardComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    IssueCaseComponent
 
   ],
   imports: [
