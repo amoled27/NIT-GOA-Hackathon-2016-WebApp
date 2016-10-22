@@ -7,7 +7,7 @@ export interface Case {
 
   //Add multiple prescriexaminations
 
-  examination: {
+  examinations: {
 
     dr_name: string;
     procedure: string;
