@@ -19,11 +19,6 @@ export const routerConfig : Route[] = [
 	component: DashboardComponent
 },
 {
-
-	path: 'home',
-	component:RegisterComponent
-},
-{
 	path: 'login',
 	component:LoginComponent
 }

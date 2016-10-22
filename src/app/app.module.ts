@@ -34,7 +34,7 @@ import { ProfileComponent } from './profile/profile.component';
 /  }
 */
 export const firebaseConfig = {
-  
+
   	apiKey: "AIzaSyBHBhavEdOA7tWZ-S97kdlFFUJlEyMFzPg",
     authDomain: "nit-hackathon-2016.firebaseapp.com",
     databaseURL: "https://nit-hackathon-2016.firebaseio.com",
@@ -47,7 +47,9 @@ export const firebaseConfig = {
 export const myFirebaseAuthConfig = {
   provider : AuthProviders.Password,
   method : AuthMethods.Password
-}
+};
+
+
 
 @NgModule({
   declarations: [
@@ -63,7 +65,7 @@ export const myFirebaseAuthConfig = {
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig,myFirebaseAuthConfig),
     RouterModule.forRoot(routerConfig)
   ],
   providers: [AuthService],
