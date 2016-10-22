@@ -1,36 +1,34 @@
-
 <div class="row container">
   <div class="col s12 m6 pad">
-    <div class="card blue-grey darken-1 paddingr" >
-        <div class="card-content white-text padtext">
+    <div class="card blue-grey darken-1 paddingr">
+      <div class="card-content white-text padtext">
         <span class="card-title hm ">Login</span>
-          <form [formGroup]="loginForm" novalidate (ngSubmit)="save(loginForm.value)">
+        <form [formGroup]="loginForm" novalidate (ngSubmit)="save(loginForm.value)">
 
-                <div class="form-group" >
-                  <input type="text" class="form-control hm" placeholder="email" formControlName="login_email">
+          <div class="form-group">
+            <input type="text" class="form-control hm" placeholder="email" formControlName="login_email">
 
-                </div>
+          </div>
 
 
-                <div class="form-group">
-                  <input type="password" class="form-control hm" placeholder="password" formControlName="login_password">
+          <div class="form-group">
+            <input type="password" class="form-control hm" placeholder="password" formControlName="login_password">
 
-                </div>
+          </div>
 
-                    <a class="waves-effect waves-light btn " style="margin-left: 220px; background-color: #ffa319;" type="submit">Login</a>
-         </form>
-        </div>
-     </div>
- </div>
+          <!-- <a class="waves-effect waves-light btn " style="margin-left: 220px; background-color: #ffa319;" type="submit">Login</a> -->
+          <button>Login</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
 
-
-
-
 <!-- </div> -->
-  <!-- <div>myForm details:-</div>
-  <pre>Is myForm valid?: <br>{{loginForm.valid | json}}</pre>
-  <pre>Is myForm submitted?: <br>{{submitted | json}}</pre>
-  <pre>myForm value: <br>{{loginForm.value | json}}</pre>
- -->
+<!-- <div>myForm details:-</div>
+<pre>Is myForm valid?: <br>{{loginForm.valid | json}}</pre>
+<pre>Is myForm submitted?: <br>{{submitted | json}}</pre>
+<pre>myForm value: <br>{{loginForm.value | json}}</pre>
+-->

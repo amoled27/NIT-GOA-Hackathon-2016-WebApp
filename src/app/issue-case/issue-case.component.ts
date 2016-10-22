@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NewCaseService} from "../shared/new-case.service";
-import {Validators ,FormGroup, FormArray, FormBuilder} from '@angular/forms'
+import {Validators, FormGroup, FormArray, FormBuilder, Form} from '@angular/forms'
+import {Case} from "../shared/case";
 
 @Component({
 	selector: 'app-issue-case',
@@ -71,9 +72,19 @@ export class IssueCaseComponent implements OnInit {
 
 
 
-    this.newcaseService.makePost(/*PASS ADHAR ID STRING HERE, AND PASS THE FULL JSON MODEL*/);
+   // this.newcaseService.makePost(/*PASS ADHAR ID STRING HERE, AND PASS THE FULL JSON MODEL*/);
 
 
 	}
+
+  save(model : Case){
+
+    const val=this.myForm.value;
+    console.log(model);
+
+    console.log(val.adhaarid);
+
+  }
+
 
 }

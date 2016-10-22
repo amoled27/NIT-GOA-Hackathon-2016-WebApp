@@ -6,9 +6,9 @@
 <div class="row m8 ms12 l3">
 <div class="container ">
 	<h3 style="color: #ffa319">Add New Case</h3>
-	<form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
+	<form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value)">
 		<div class="form-group text_color">
-			
+
 			<input type="text" placeholder="Adhaar ID" formControlName="adhaarid">
 		</div>
 
@@ -21,7 +21,7 @@
 			        <div class="card-content">
 			          <div formArrayName='examinations'>
 							<div *ngFor="let examination of myForm.controls.examinations.controls; let i=index" >
-								<div class="text_color"> 
+								<div class="text_color">
 									<span>Examination {{i+1}}</span>
 									<span *ngIf="myForm.controls.examinations.controls.length >1" (click)="removeExamination(i)">
 							</span>
@@ -62,7 +62,7 @@
 
 		<!-- <div formArrayName='examinations'>
 			<div *ngFor="let examination of myForm.controls.examinations.controls; let i=index" >
-				<div class="text_color"> 
+				<div class="text_color">
 					<span>Examination {{i+1}}</span>
 					<span *ngIf="myForm.controls.examinations.controls.length >1" (click)="removeExamination(i)">
 					</span>
@@ -135,7 +135,8 @@
 		<div>
 			<a (click)="addPrescriptionmed()" class="btn waves-effect waves-light orange"><strong>Add Medicine</strong></a>
 		</div> -->
-		<button type="submit" [disabled]="!myForm.valid">Submit</button>		
-	</form>
+		<!-- <button type="submit" [disabled]="!myForm.valid">Submit</button> -->
+    <button>Click</button>
+  </form>
 </div>
 </div>
