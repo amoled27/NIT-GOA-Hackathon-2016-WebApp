@@ -1,4 +1,4 @@
-<form [formGroup]="myForm" novalidate (ngSubmit)="save(myFrom.value, myFrom.valid)">
+<!-- <form [formGroup]="myForm" novalidate (ngSubmit)="save(myFrom.value, myFrom.valid)">
 
 		<div class="form-group">
 			<label for="">Name</label>
@@ -32,10 +32,48 @@
 			
 		</div>
 
-		<button type="submit"[disabled]="!isPasswordMatch()">Sign up</button>
+		<button [disabled]="!isPasswordMatch()">Sign up</button>
 
 		<br>
 		testing
 		<pre> valid? <br>{{myForm.valid |json}}</pre>
 		<pre>Value<br>{{myForm.value |json}}</pre>
+	</form> -->
+
+
+
+	<form>
+		<div class="form-group">
+			<label for="">Name</label>
+			Dr.<input type="text" class="form-control" name="name" [(ngModel)]="name">
+			
+		</div>
+		<div class="form-group">
+			<label for="">Email</label>
+			<input type="text" class="form-control" name="email" [(ngModel)]="email">
+			
+		</div>
+
+		<div class="form-group">
+			<label for="">password</label>
+			<input type="password" class="form-control" name="password" [(ngModel)]="password">
+			
+		</div>
+		<div class="form-group">
+			<label for="">Confirm password</label>
+			<input type="password" class="form-control" name="confirm_password" [(ngModel)]="confirm_password">
+			
+		</div>
+		<div class="form-group">
+			<label for="">Phone Number</label>
+			<input type="text" class="form-control" name="contact" [(ngModel)]="contact">
+			
+		</div>
+		<div class="form-group">
+			<label for="">Medical Registration Number</label>
+			<input type="text" class="form-control" name="medregistration" [(ngModel)]="medregistration">
+			
+		</div>
+
+		<button [disabled]="!isPasswordMatch()" (click)="signUp()">Sign up</button>
 	</form>
