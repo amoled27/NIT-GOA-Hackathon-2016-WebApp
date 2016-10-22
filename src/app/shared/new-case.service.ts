@@ -12,10 +12,10 @@ export class NewCaseService {
 
   makePost(adhardid :string, model : Case){
 
-    const path = `/aadhar_no/` + adhardid;
+
+    const path = `/case/` + adhardid;
     this.userid = this.af.database.list(path);
     this.userid.push(model);
-
 
   }
 

@@ -21,4 +21,6 @@ export interface Case {
     medicinename: string;
   }
 
+
+
 }

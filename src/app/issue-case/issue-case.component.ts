@@ -84,6 +84,8 @@ export class IssueCaseComponent implements OnInit {
 
     console.log(val.adhaarid);
 
+    this.newcaseService.makePost(val.aadharid, model)
+
   }
 
 
