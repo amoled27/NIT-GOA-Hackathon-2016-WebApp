@@ -19,6 +19,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { IssueCaseComponent } from './issue-case/issue-case.component';
+import { EditIssueCaseComponent } from './edit-issue-case/edit-issue-case.component';
 
 
 
@@ -59,7 +60,8 @@ export const myFirebaseAuthConfig = {
     DashboardComponent,
     LoginComponent,
     ProfileComponent,
-    IssueCaseComponent
+    IssueCaseComponent,
+    EditIssueCaseComponent
 
   ],
   imports: [
