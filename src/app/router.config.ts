@@ -2,7 +2,7 @@ import {Route} from "@angular/router";
 import {RegisterComponent} from "./register/register.component"
 import {DashboardComponent} from "./dashboard/dashboard.component"
 import {LoginComponent} from "./login/login.component";
-
+import {IssueCaseComponent} from './issue-case/issue-case.component'
 
 export const routerConfig : Route[] = [
 {
@@ -21,6 +21,10 @@ export const routerConfig : Route[] = [
 {
 	path: 'login',
 	component:LoginComponent
+},
+{
+	path: 'new_issue',
+	component:IssueCaseComponent
 }
 
 ];
