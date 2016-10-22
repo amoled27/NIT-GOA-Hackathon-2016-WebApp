@@ -16,6 +16,7 @@ import  {AuthService} from "./shared/security/auth/auth.service";
 import {RouterModule} from "@angular/router";
 import  {routerConfig} from "./router.config";
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -52,7 +53,8 @@ export const myFirebaseAuthConfig = {
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

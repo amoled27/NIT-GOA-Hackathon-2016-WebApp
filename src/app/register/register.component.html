@@ -1,4 +1,4 @@
-<form [formGroup]="registerForm" ngSubmit="save(registerFrom.value, registerFrom.valid)">
+<form [formGroup]="myForm" novalidate (ngSubmit)="save(myFrom.value, myFrom.valid)">
 
 		<div class="form-group">
 			<label for="">Name</label>
@@ -36,6 +36,6 @@
 
 		<br>
 		testing
-		<pre> valid? <br>{{registerForm.valid |json}}</pre>
-		<pre>Value<br>{{registerForm.value |json}}</pre>
+		<pre> valid? <br>{{myForm.valid |json}}</pre>
+		<pre>Value<br>{{myForm.value |json}}</pre>
 	</form>

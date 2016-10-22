@@ -10,11 +10,11 @@ import {Route, Router} from "@angular/router";
 })
 export class RegisterComponent implements OnInit {
 
-public registerForm : FormGroup;
+public myForm : FormGroup;
   constructor(private _fb: FormBuilder, private authService : AuthService, private router:Router) { }
   
   ngOnInit() {
-  	this.registerForm = this._fb.group({
+  	this.myForm = this._fb.group({
   		register_email: ['', [<any>Validators.required, <any>Validators.minLength(5)]],
   		register_name : ['', [<any>Validators.required]],
   		register_password: ['', [<any>Validators.required, <any>Validators.minLength(5)]],
@@ -26,14 +26,14 @@ public registerForm : FormGroup;
   }
 
   isPasswordMatch () {
-  	const val = this.registerForm.value;
+  	const val = this.myForm.value;
   	return val && val.register_password && val.register_confirm_password == val.register_password;
 
   }
 
-  save (registerForm:Form , isValid:boolean){
-  	console.log(registerForm, isValid);
-  	const val = this.registerForm.value;
+  save (myForm:Form , isValid:boolean){
+  	console.log(myForm, isValid);
+  	const val = this.myForm.value;
 
   	this.authService.signUp(val.register_email, val.register_password).subscribe(
   		() => this.router.navigate(['/home']),
