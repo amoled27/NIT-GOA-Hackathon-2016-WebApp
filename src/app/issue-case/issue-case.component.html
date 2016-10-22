@@ -12,7 +12,55 @@
 			<input type="text" placeholder="Adhaar ID" formControlName="adhaarid">
 		</div>
 
-		<div formArrayName='examinations'>
+
+
+
+		<div class="col s12 m7">
+			   <div class="card horizontal">
+			      <div class="card-stacked">
+			        <div class="card-content">
+			          <div formArrayName='examinations'>
+							<div *ngFor="let examination of myForm.controls.examinations.controls; let i=index" >
+								<div class="text_color"> 
+									<span>Examination {{i+1}}</span>
+									<span *ngIf="myForm.controls.examinations.controls.length >1" (click)="removeExamination(i)">
+							</span>
+								</div>
+							<div [formGroupName]="i">
+								<div class="text_color">
+								<input type="text" placeholder="Dr.'s Name" formControlName="dr_name">
+							</div>
+
+							<div class="text_color">
+								<input type="text" placeholder="Procedure" formControlName="procedure">
+							</div>
+
+							<div class="text_color">
+								<input type="text" placeholder="Specifics of Procedure" formControlName="specificsofprocedure">
+							</div>
+						</div>
+						<br>
+					</div>
+						</div>
+			        </div>
+			        <div class="card-action">
+			          <div>
+							<a (click)="addExaminations()" class="btn waves-effect waves-light orange"><strong>Add Examination</strong></a>
+						</div>
+			        </div>
+			      </div>
+			 </div>
+ 		 </div>
+
+
+
+
+
+
+
+
+
+		<!-- <div formArrayName='examinations'>
 			<div *ngFor="let examination of myForm.controls.examinations.controls; let i=index" >
 				<div class="text_color"> 
 					<span>Examination {{i+1}}</span>
@@ -36,9 +84,40 @@
 		</div>
 		<div>
 			<a (click)="addExaminations()" class="btn waves-effect waves-light orange"><strong>Add Examination</strong></a>
-		</div>
+		</div> -->
 
-		<div formArrayName='prescriptionmeds'>
+
+		<div class="col s12 m7">
+			   <div class="card horizontal">
+			      <div class="card-stacked">
+			        <div class="card-content">
+			          <div formArrayName='prescriptionmeds'>
+						<div *ngFor="let prescriptionmed of myForm.controls.prescriptionmeds.controls; let i=index" >
+						<div class="text_color">
+							<span>Prescription {{i+1}}</span>
+								<span *ngIf="myForm.controls.prescriptionmeds.controls.length >1" (click)="removePrescriptionmed(i)">
+								</span>
+						</div>
+								<div [formGroupName]="i">
+										<div class="text_color">
+											<label>Medicine Name</label>
+											<input type="text" placeholder="Medicine Name" formControlName="medicinename">
+										</div>
+								</div>
+								<br>
+							</div>
+						</div>
+						</div>
+			        </div>
+			        <div class="card-action">
+			          <div>
+							<a (click)="addPrescriptionmed()" class="btn waves-effect waves-light orange"><strong>Add Medicine</strong></a>
+						</div>
+			        </div>
+			      </div>
+			 </div>
+
+		<!-- <div formArrayName='prescriptionmeds'>
 			<div *ngFor="let prescriptionmed of myForm.controls.prescriptionmeds.controls; let i=index" >
 				<div class="text_color">
 					<span>Prescription {{i+1}}</span>
@@ -55,7 +134,7 @@
 		</div>
 		<div>
 			<a (click)="addPrescriptionmed()" class="btn waves-effect waves-light orange"><strong>Add Medicine</strong></a>
-		</div>
+		</div> -->
 		<button type="submit" [disabled]="!myForm.valid">Submit</button>		
 	</form>
 </div>
