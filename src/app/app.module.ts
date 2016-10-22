@@ -5,8 +5,8 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AngularFireModule,AuthMethods, AuthProviders} from 'angularfire2';
+//register
 import { RegisterComponent } from './register/register.component';
-
 //auth
 import  Authprovider = firebase.auth.AuthProvider;
 import  {AuthService} from "./shared/security/auth/auth.service";
@@ -15,6 +15,7 @@ import  {AuthService} from "./shared/security/auth/auth.service";
 // router
 import {RouterModule} from "@angular/router";
 import  {routerConfig} from "./router.config";
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -50,7 +51,8 @@ export const myFirebaseAuthConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,10 @@ export class AuthService {
   	return this.fromFirebaseAuthPromise(this.auth.createUser({email,password}));
 
   }
+  login(email:string , password: string): Observable<FirebaseAuthState>{
+  	return this.fromFirebaseAuthPromise(this.auth.login({email,password}));
+
+  }
 
 
 

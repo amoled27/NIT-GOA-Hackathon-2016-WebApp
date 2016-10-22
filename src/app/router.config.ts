@@ -1,5 +1,6 @@
 import {Route} from "@angular/router";
-import {RegisterComponent} from "./register/register.component"
+import {RegisterComponent} from "./register/register.component";
+import {LoginComponent} from "./login/login.component";
 
 export const routerConfig : Route[] = [
 {
@@ -9,6 +10,14 @@ export const routerConfig : Route[] = [
 {
 	path: '',
 	component:RegisterComponent
+},
+{
+	path: 'home',
+	component:RegisterComponent
+},
+{
+	path: 'login',
+	component:LoginComponent
 }
 
 ];
