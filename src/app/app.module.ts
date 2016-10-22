@@ -19,6 +19,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { IssueCaseComponent } from './issue-case/issue-case.component';
+import {NewCaseService} from "./shared/new-case.service";
 
 
 
@@ -70,7 +71,7 @@ export const myFirebaseAuthConfig = {
     AngularFireModule.initializeApp(firebaseConfig,myFirebaseAuthConfig),
     RouterModule.forRoot(routerConfig)
   ],
-  providers: [AuthService],
+  providers: [AuthService, NewCaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

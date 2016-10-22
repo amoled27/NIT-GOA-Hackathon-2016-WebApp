@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NewCaseService} from "../shared/new-case.service";
 
 @Component({
 	selector: 'app-issue-case',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class IssueCaseComponent implements OnInit {
 	adhaarid:string;
 	date:string;
-	constructor() { }
+	constructor(private newcaseService : NewCaseService) { }
 
 	ngOnInit() {
 	}
@@ -17,6 +18,10 @@ export class IssueCaseComponent implements OnInit {
 		this.date = String(new Date());
 		console.log(this.date);
 		console.log(this.adhaarid);
+
+    this.newcaseService.makePost(this.adhaarid);
+
+
 	}
 
 }
