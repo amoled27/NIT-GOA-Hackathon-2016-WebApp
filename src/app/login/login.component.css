@@ -2,7 +2,27 @@
 	margin-left: 20px;
 }
 
-.logincard{
-	/*padding-right: 350px;*/
-	/*padding-left: 150px;*/
+.pad{
+	height: 300px;
+	width: 600px;
+	margin-left: 170px;
+	padding: 100,1000,100,100;
+	padding-left: 20px;
+}
+.paddingr{
+	margin-left: 220px;
+width: 400px;
+padding-left: 30px;
+padding-right: 30px;
+margin-top: 150px;
+
+}
+
+.padtext{
+	height: 250px;
+width: 350px;
+
+}
+.hm{
+	color: #ffa319;
 }

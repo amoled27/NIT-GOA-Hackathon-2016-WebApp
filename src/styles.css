@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-	background: #ffffff;
+	background: #212121;
+}
+
+.logo{
+	padding-left: 50px;
+	font-family: 'Comfortaa', cursive;
+
 }
