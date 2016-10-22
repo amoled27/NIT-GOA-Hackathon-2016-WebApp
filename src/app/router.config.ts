@@ -1,5 +1,6 @@
 import {Route} from "@angular/router";
 import {RegisterComponent} from "./register/register.component"
+import {DashboardComponent} from "./dashboard/dashboard.component"
 
 export const routerConfig : Route[] = [
 {
@@ -9,6 +10,10 @@ export const routerConfig : Route[] = [
 {
 	path: '',
 	component:RegisterComponent
+},
+{
+	path: 'dashboard',
+	component: DashboardComponent
 }
 
 ];

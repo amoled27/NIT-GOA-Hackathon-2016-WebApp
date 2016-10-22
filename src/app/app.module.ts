@@ -15,6 +15,7 @@ import  {AuthService} from "./shared/security/auth/auth.service";
 // router
 import {RouterModule} from "@angular/router";
 import  {routerConfig} from "./router.config";
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -50,7 +51,8 @@ export const myFirebaseAuthConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent
+    RegisterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
