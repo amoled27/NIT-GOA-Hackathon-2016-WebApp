@@ -5,6 +5,10 @@ export const routerConfig : Route[] = [
 {
 	path: 'register',
 	component:RegisterComponent
+},
+{
+	path: '',
+	component:RegisterComponent
 }
 
 ];

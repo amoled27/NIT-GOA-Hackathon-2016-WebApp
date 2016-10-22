@@ -1,4 +1,4 @@
-<form [formGroup]="registerForm" novalidate(ngSubmit)="save(registerFrom.value, registerFrom.valid)">
+<form [formGroup]="registerForm" ngSubmit="save(registerFrom.value, registerFrom.valid)">
 
 		<div class="form-group">
 			<label for="">Name</label>
@@ -13,12 +13,12 @@
 
 		<div class="form-group">
 			<label for="">password</label>
-			<input type="text" class="form-control" formControlName="register_password">
+			<input type="password" class="form-control" formControlName="register_password">
 			
 		</div>
 		<div class="form-group">
 			<label for="">Confirm password</label>
-			<input type="text" class="form-control" formControlName="register_confirm_password">
+			<input type="password" class="form-control" formControlName="register_confirm_password">
 			
 		</div>
 		<div class="form-group">
