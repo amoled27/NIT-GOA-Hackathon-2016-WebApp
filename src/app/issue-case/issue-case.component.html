@@ -1,12 +1,64 @@
-<form>
+<!-- <form>
 	<label>Adhaar Id</label>
 	<input type="text" name="adhaarid" [(ngModel)]='adhaarid'>
 	<button (click)="submitIssue()">Submit</button>
-</form>
+</form> -->
 
 <div class="container">
 	<h3>Add New Case</h3>
 	<form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
+		<div class="form-group">
+			<label>Adhaari Id</label>
+			<input type="text" formControlName="adhaarid">
+		</div>
+
+		<div formArrayName='examinations'>
+			<div *ngFor="let examination of myForm.controls.examinations.controls; let i=index" >
+				<div>
+					<span>Examination {{i+1}}</span>
+					<span *ngIf="myForm.controls.examinations.controls.length >1" (click)="removeExamination(i)">
+					</span>
+				</div>
+				<div [formGroupName]="i">
+					<div>
+						<label>Dr.'s Name</label>
+						<input type="text" formControlName="dr_name">
+					</div>
+
+					<div>
+						<label>Procedure</label>
+						<input type="text" formControlName="procedure">
+					</div>
+
+					<div>
+						<label>Specifics of Procedure</label>
+						<input type="text" formControlName="specificsofprocedure">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<a (click)="addExaminations()"><strong>Add Examination</strong></a>
+		</div>
+
+		<div formArrayName='prescriptionmeds'>
+			<div *ngFor="let prescriptionmed of myForm.controls.prescriptionmeds.controls; let i=index" >
+				<div>
+					<span>Prescription {{i+1}}</span>
+					<span *ngIf="myForm.controls.prescriptionmeds.controls.length >1" (click)="removePrescriptionmed(i)">
+					</span>
+				</div>
+				<div [formGroupName]="i">
+					<div>
+						<label>Medicine Name</label>
+						<input type="text" formControlName="medicinename">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<a (click)="addPrescriptionmed()"><strong>Add Medicine</strong></a>
+		</div>
 		<button type="submit" [disabled]="!myForm.valid">Submit</button>		
 	</form>
 </div>
